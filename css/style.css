@@ -1,0 +1,278 @@
+/*   My stylesheet!   */
+
+/*   Index   */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	position: relative;
+}
+
+/*   Iframe   */
+
+.wrapper {
+	container-type: inline-size;
+	position: relative;
+	
+	margin: 0 auto;
+	aspect-ratio: 743 / 595;
+	inline-size: min(100%, 64rem);
+	
+	background-image: url("../img/page-backup.png");
+	background-repeat: no-repeat;
+	background-size: 99.95%;
+	
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
+	image-rendering: -moz-crisp-edges;
+}
+
+.background {
+	z-index: -1;
+	position: fixed;
+	inset-inline-start: 0cqi;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	
+	background-image: url("../img/background-tiles.png");
+	background-repeat: repeat;
+	background-size: calc(140/743*99.95cqi);
+}
+
+.iframe {
+	border: 0;
+	inline-size: 100cqi;
+	block-size: 100%;
+}
+
+.content {
+	container-type: inline-size;
+	position: relative;
+	
+	inline-size: 99.95cqi;
+	block-size: 99.95%;
+}
+
+/*   Image settings  */
+
+img {
+	position: absolute;
+	/*image-rendering: auto;*/
+	/*image-rendering: optimizeSpeed;*/
+	/*image-rendering: optimize-contrast;*/
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
+	/*image-rendering: -o-crisp-edges;*/
+	image-rendering: -moz-crisp-edges;
+	/*-ms-interpolation-mode: nearest-neighbor;*/
+}
+
+.no-drag {
+	user-drag: none;
+	-webkit-user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.page {
+	z-index: 10;
+	width: 100%;
+}
+
+/*   Global buttons   */
+
+.fold-left {
+	z-index: 20;
+	inline-size: calc(48/743*100cqi);
+	inset-inline-start: calc(25/743*100cqi);
+	inset-block-start: calc(468/743*100cqi);
+	cursor: pointer;
+}
+
+.fold-right {
+	z-index: 20;
+	inline-size: calc(48/743*100cqi);
+	inset-inline-start: calc(670/743*100cqi);
+	inset-block-start: calc(468/743*100cqi);
+	cursor: pointer;
+}
+
+.ribbon-left {
+	z-index: 20;
+	inline-size: calc(47/743*100cqi);
+	inset-inline-start: calc(323/743*100cqi);
+	inset-block-start: calc(515/743*100cqi);
+	cursor: pointer;
+}
+
+.ribbon-right {
+	z-index: 20;
+	inline-size: calc(47/743*100cqi);
+	inset-inline-start: calc(373/743*100cqi);
+	inset-block-start: calc(515/743*100cqi);
+	cursor: pointer;
+}
+
+/*   Unique buttons   */
+
+.guestbook {
+	z-index: 20;
+	inline-size: calc(170/743*100cqi);
+	inset-inline-start: calc(62/743*100cqi);
+	inset-block-start: calc(65/743*100cqi);
+	cursor: pointer;
+}
+
+.stamp {
+	z-index: 30; 
+	inline-size: calc(29/743*100cqi); 
+	inset-inline-start: calc(190/743*100cqi); 
+	inset-block-start: calc(307/743*100cqi); 
+	cursor: pointer;
+}
+
+/*   Text   */
+
+.text-div-left { /* a container that holds all text items within it. 1-2 per page */
+	padding: 0;
+	border: 0;
+	margin: 0;
+	z-index: 25;
+	position: absolute;
+	inset-inline-start: calc(67/743*100cqi);
+	inset-block-start: calc(37/743*100cqi);
+}
+
+.text-div-right { /* a container that holds all text items within it. 1-2 per page */
+	padding: 0;
+	border: 0;
+	margin: 0;
+	z-index: 25;
+	position: absolute;
+	inset-inline-start: calc(420/743*100cqi);
+	inset-block-start: calc(37/743*100cqi);
+}
+
+@font-face {
+	font-family: "Dedicool";
+	src:
+		local("Dedicool"),
+		url("https://ruecharli.space/font/DedicoolRegular.otf"),
+		url("{{ site.url }}/font/DedicoolRegular.otf"),
+		url("/font/DedicoolRegular.otf"),
+		url("DedicoolRegular.otf"),
+		url("https://github.com/ruecharli/dot-space/blob/main/font/DedicoolRegular.otf"),
+		url("ruecharli.github.io/dot-space/font/DedicoolRegular.otf");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Eldring";
+	src:
+		local("Eldring"),
+		url("https://ruecharli.space/font/Eldring.ttf"),
+		url("{{ site.url }}/font/Eldring.ttf"),
+		url("/font/Eldring.ttf"),
+		url("Eldring.ttf"),
+		url("https://github.com/ruecharli/dot-space/blob/main/font/Eldring.ttf"),
+		url("ruecharli.github.io/dot-space/font/Eldring.ttf");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Eldring Bold";
+	src:
+		local("Eldring Bold"),
+		url("https://ruecharli.space/font/EldringBold.ttf"),
+		url("{{ site.url }}/font/EldringBold.ttf"),
+		url("/font/EldringBold.ttf"),
+		url("EldringBold.ttf"),
+		url("https://github.com/ruecharli/dot-space/blob/main/font/EldringBold.ttf"),
+		url("ruecharli.github.io/dot-space/font/EldringBold.ttf");
+	font-display: swap;
+}
+
+p {
+	font-family: "Dedicool";
+	font-size: calc(8/743*100cqi);
+	-webkit-font-smoothing: none;
+	-moz-osx-font-smoothing: unset;
+	font-smoothing: unset;
+	font-smooth: never;
+	filter: contrast(1);
+	line-height: calc(8/743*100cqi);
+	font-weight: 100;
+	text-wrap: balance;
+	padding: 0;
+	border: 0;
+	margin: 0;
+	color: #30180C;
+}
+
+h1 {
+	font-family: "Eldring";
+	font-size: calc(12/743*100cqi);
+	-webkit-font-smoothing: none;
+	-moz-osx-font-smoothing: unset;
+	font-smoothing: unset;
+	font-smooth: never;
+	filter: contrast(1);
+	line-height: calc(12/743*100cqi);
+	font-weight: 100;
+	text-wrap: balance;
+	padding: 0;
+	border: 0;
+	margin: 0;
+	color: #30180C;
+}
+
+h2 {
+	font-family: "Eldring Bold";
+	font-size: calc(12/743*100cqi);
+	-webkit-font-smoothing: none;
+	-moz-osx-font-smoothing: unset;
+	font-smoothing: unset;
+	font-smooth: never;
+	filter: contrast(1);
+	line-height: calc(12/743*100cqi);
+	font-weight: 100;
+	text-wrap: balance;
+	padding: 0;
+	border: 0;
+	margin: 0;
+	color: #30180C;
+}
+
+.display-flex { /* for character image containers, assigned in sript-text.js */
+	display: flex;
+}
+
+.character-delphin {
+	height: calc(64/743*100cqi);
+	position: relative;
+}
+
+/*   Page numbers   */
+
+.page-num-left-div {
+	position: absolute;
+	z-index: 20;
+	inset-inline-start: calc(189/743*100cqi);
+	inset-block-start: calc(495/743*100cqi);
+}
+
+.page-num-right-div {
+	position: absolute;
+	z-index: 20;
+	inset-inline-start: calc(536/743*100cqi);
+	inset-block-start: calc(495/743*100cqi);
+}
