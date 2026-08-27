@@ -86,8 +86,7 @@ function pageNum() {
 
 function guestbookClose() {
 	window.parent.postMessage("audioGuestbookClose", "*")
-	document.querySelector(".guestbook-form").reset();
-	document.querySelector(".guestbook-form").style.display = "none"
+	document.getElementById('form').style.display = "none"
 	document.querySelector('.guestbook').src = "img/guestbook-closed.png"
 	return
 }
@@ -175,11 +174,42 @@ if (!!guestbook) {
 			window.parent.postMessage("audioGuestbookOpen", "*")
 			guestbook.src = "img/guestbook-opened.png"
 			guestbook.style.cursor = "auto"
-			document.querySelector(".guestbook-form").style.display = "block"/*
-			document.querySelector(".guestbook-form").addEventListener('submit', function(e) {
-				e.preventDefault()
-				guestbookClose()
-			})*/
+			document.getElementById('form').style.display = "block"
 		}
+	})
+}
+
+const form = document.getElementById("form")
+if (!!form) {
+	form.addEventListener("submit", function(e) {
+		e.preventDefault()
+		const formData = new FormData(form)
+		const object = Object.fromEntries(formData)
+		const json = JSON.stringify(object)
+
+		fetch("https://api.web3forms.com/submit", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					"Accept": "application/json"
+				},
+				body: json
+			})
+		.then(function() {
+			form.reset()
+			guestbookClose()
+		})
+	})
+}
+
+const stamp = document.querySelector(".form-submit")
+if (!!stamp) {
+	stamp.addEventListener("mouseenter", () => {
+		stamp.classList.remove("stamp-normal")
+		stamp.classList.add("stamp-hover")
+	})
+	stamp.addEventListener("mouseleave", () => {
+		stamp.classList.remove("stamp-hover")
+		stamp.classList.add("stamp-normal")
 	})
 }

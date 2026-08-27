@@ -13,17 +13,14 @@
 			<img class="no-drag fold-right" src="img/fold-right-normal.png">
 			<img class="no-drag ribbon-right" src="img/ribbon-right-normal.png">
 			<img class="no-drag guestbook" src="img/guestbook-closed.png">
-			<form class="guestbook-form" id="form" action="https://api.web3forms.com/submit" method="POST">
+			<form id="form" action="https://api.web3forms.com/submit" method="POST">
 				
 				<input type="hidden" name="access_key" value="d2b88a17-7001-479d-ab07-e978038e1c53">
-				<input type="hidden" name="redirect" value="https://ruecharli.com/p.00.001.html">
 				<input type="checkbox" name="botcheck" id="" style="display: none;">
 				
-				<input name="website" placeholder="Website or Mastodon handle">
-				<br>
-				<textarea name="message" placeholder="Message (required)" required></textarea>
-				<br>
-				<button type="submit">Submit Form</button>
+				<input class="form-website" name="website" placeholder="Website or Mastodon handle" spellcheck="false">
+				<textarea class="form-message" name="message" placeholder="Message (required)" spellcheck="false" required></textarea>
+				<button class="form-submit stamp-normal" type="submit"></button>
 			</form>
 			
 			<div class="text-div-left">

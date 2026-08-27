@@ -11,6 +11,35 @@ body {
 	position: relative;
 }
 
+/*   Images  */
+
+img {
+	position: absolute;
+	/*image-rendering: auto;*/
+	/*image-rendering: optimizeSpeed;*/
+	/*image-rendering: optimize-contrast;*/
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
+	/*image-rendering: -o-crisp-edges;*/
+	image-rendering: -moz-crisp-edges;
+	/*-ms-interpolation-mode: nearest-neighbor;*/
+}
+
+.no-drag {
+	user-drag: none;
+	-webkit-user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.page {
+	z-index: 10;
+	width: 100%;
+}
+
 /*   Iframe   */
 
 .wrapper {
@@ -43,6 +72,11 @@ body {
 	background-image: url("../img/background-tiles.png");
 	background-repeat: repeat;
 	background-size: calc(140/743*99.95cqi);
+	
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
+	image-rendering: -moz-crisp-edges;
 }
 
 .iframe {
@@ -59,36 +93,7 @@ body {
 	block-size: 99.95%;
 }
 
-/*   Image settings  */
-
-img {
-	position: absolute;
-	/*image-rendering: auto;*/
-	/*image-rendering: optimizeSpeed;*/
-	/*image-rendering: optimize-contrast;*/
-	image-rendering: -webkit-optimize-contrast;
-	image-rendering: pixelated;
-	image-rendering: crisp-edges;
-	/*image-rendering: -o-crisp-edges;*/
-	image-rendering: -moz-crisp-edges;
-	/*-ms-interpolation-mode: nearest-neighbor;*/
-}
-
-.no-drag {
-	user-drag: none;
-	-webkit-user-drag: none;
-	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-}
-
-.page {
-	z-index: 10;
-	width: 100%;
-}
-
-/*   Global buttons   */
+/*   Iframe buttons   */
 
 .fold-left {
 	z-index: 20;
@@ -132,19 +137,86 @@ img {
 	cursor: pointer;
 }
 
-textarea {
-  resize: none;
-}
-
-.guestbook-form {
+#form {
 	position: absolute;
 	z-index: 30;
-	inset-inline-start: calc(62/743*100cqi);
-	inset-block-start: calc(65/743*100cqi);
-	inline-size: calc(170/743*100cqi);
-	block-size: calc(280/743*100cqi);
+	inset-inline-start: calc(74/743*100cqi);
+	inset-block-start: calc(150/743*100cqi);
+	padding: 0;
 	border: 0;
+	margin: 0;
 	display: none;
+}
+
+.form-website, .form-message {
+	font-family: "Dedicool";
+	font-size: calc(8/743*100cqi);
+	-webkit-font-smoothing: none;
+	-moz-osx-font-smoothing: unset;
+	font-smoothing: unset;
+	font-smooth: never;
+	filter: contrast(1);
+	line-height: calc(8/743*100cqi);
+	font-weight: 100;
+	text-wrap: stable;
+	color: #0C0966;
+	background-color: rgba(0,0,0,0);
+	
+	padding: 0;
+	border: 0;
+	margin: 0;
+	
+	inline-size: calc(146/743*100cqi);
+	display: block;
+	box-sizing: border-box;
+	text-box-trim: none;
+}
+
+.form-website {
+	block-size: calc(8/743*100cqi);
+}
+
+.form-message {
+	block-size: calc(144/743*100cqi);
+	resize: none;
+}
+
+.form-submit {
+	position: absolute;
+	inset-inline-start: calc(106/743*100cqi);
+	inset-block-start: calc(155/743*100cqi);
+	inline-size: calc(29/743*99.95cqi);
+	block-size: calc(29/743*99.95cqi);
+	
+	padding: 0;
+	border: 0;
+	margin: 0;
+	
+	background-repeat: no-repeat;
+	background-size: calc(29/743*99.95cqi);
+	background-color: rgba(0,0,0,0);
+	
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
+	image-rendering: -moz-crisp-edges;
+	
+	cursor: pointer;
+}
+
+.stamp-normal {
+	background-image: url("../img/stamp-normal.png");
+}
+
+.stamp-hover {
+	background-image: url("../img/stamp-hover.png");
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
 }
 
 /*   Text   */
