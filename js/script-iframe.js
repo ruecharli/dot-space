@@ -1,5 +1,3 @@
-console.log("script-iframe.js running!")
-
 const ppc = [2, 3, 3]
 
 // Functions
@@ -88,17 +86,13 @@ function pageNum() {
 
 function guestbookClose() {
 	window.parent.postMessage("audioGuestbookClose", "*")
+	document.querySelector(".guestbook-form").reset();
 	document.querySelector(".guestbook-form").style.display = "none"
 	document.querySelector('.guestbook').src = "img/guestbook-closed.png"
 	return
 }
 
-window.onload = function() {
-	// Reset the form fields when the page loads
-	document.getElementById("form").reset();
-};
-
-// Image attributes
+// Images
 
 const noDrag = document.querySelectorAll(".no-drag")
 
@@ -107,7 +101,7 @@ noDrag.forEach(element => {
 	element.setAttribute("draggable", "false")
 })
 
-// Global buttons
+// Iframe buttons
 
 const foldLeft = document.querySelector(".fold-left")
 if (!!foldLeft) {
@@ -161,7 +155,8 @@ if (!!pageNumRight) {
 	document.querySelector(".page-num-right").innerText = rightTotal
 }
 
-// Unique buttons
+// Guestbook
+
 const guestbook = document.querySelector(".guestbook")
 if (!!guestbook) {
 	let guestbookIsClick = Boolean(false)
@@ -180,7 +175,11 @@ if (!!guestbook) {
 			window.parent.postMessage("audioGuestbookOpen", "*")
 			guestbook.src = "img/guestbook-opened.png"
 			guestbook.style.cursor = "auto"
-			document.querySelector(".guestbook-form").style.display = "block"
+			document.querySelector(".guestbook-form").style.display = "block"/*
+			document.querySelector(".guestbook-form").addEventListener('submit', function(e) {
+				e.preventDefault()
+				guestbookClose()
+			})*/
 		}
 	})
 }
