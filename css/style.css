@@ -148,7 +148,7 @@ img {
 	display: none;
 }
 
-.form-website, .form-message {
+.form-name, .form-website, .form-message {
 	font-family: "Dedicool";
 	font-size: calc(8/743*100cqi);
 	-webkit-font-smoothing: none;
@@ -172,7 +172,7 @@ img {
 	text-box-trim: none;
 }
 
-.form-website {
+.form-name, .form-website {
 	block-size: calc(8/743*100cqi);
 }
 
